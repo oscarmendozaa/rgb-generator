@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Space+Mono&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black ;
+    font-family: 'Space Mono', monospace;
+}
+
+/* .container{
+    height: 80vh;
+    width:  400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    background-color: white;
+} */
+
+.container {
+    height: 80vh;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .container::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 6px solid transparent;
+    border-radius: 20px;
+    animation: animateBorder 2s linear infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes animateBorder {
+    0% {
+      border-color: rgb(var(--num1-value), var(--num2-value), var(--num3-value));
+    }
+    50% {
+      border-color: rgb(var(--num2-value), var(--num1-value), var(--num3-value));
+    }
+    100% {
+      border-color: rgb(var(--num3-value), var(--num1-value), var(--num2-value));
+    }
+  }
+
+.color-container{
+    height: 200px;
+    width: 300px;
+    border-radius: 2px 60px 2px 50px;
+}
+
+.rangeInput{
+    width: 90px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.rgbNums{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2px;
+}
+
+label{
+    width: 40px;
+    height: 20px;
+    background-color: rgb(240, 239, 239);
+    text-align: center;
+}
+
